@@ -16,9 +16,15 @@ public class SnakeLadder {
 		
 		switch(option)
 		{
-		case 1: System.out.println("Encountered ladder");
-				current_position+=dieNumber;
-					break;
+		case 1: if (current_position + dieNumber > 100) {
+			break;
+		} else {
+			current_position += dieNumber;
+			break;
+		}
+	
+		
+					
 		case 2: if (current_position - dieNumber < 0) {
 			current_position = 0;
 		} else {
@@ -31,7 +37,7 @@ public class SnakeLadder {
 		
 		}
 		System.out.println("Updated position after rolling the dice="+current_position);
-		if (current_position >= 100) {
+		if (current_position == 100) {
 			break;
 		}
 	}
