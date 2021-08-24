@@ -3,7 +3,8 @@ public class SnakeLadder {
 	static int starting_position=0;
 	static int current_position1=0;
 	static int current_position2=0;
-	static int count=0;
+	static int count1=0;
+	static int count2=0;
 	static int turn=0; //0 for player 1's turn 1 for player 2's turn
 	
 	public static void main(String[] args) {
@@ -11,7 +12,7 @@ public class SnakeLadder {
 		System.out.println("Initial position of the player is: "+starting_position);
 		play();
 		
-		System.out.println("Number of times die was rolled to win the game="+count);
+		System.out.println("Number of times die was rolled to win the game="+count1);
 	}
 	static void play()
 	{
@@ -19,7 +20,7 @@ public class SnakeLadder {
 			if(turn==0) {
 			int dieNumber1=(int)(Math.floor(Math.random()*10)%6)+1;
 			int option1=(int) (Math.floor(Math.random()*10)%3);
-			count+=1;
+			count1+=1;
 			switch(option1)//1 for ladder 2 for snake
 			{
 			case 1: if (current_position1 + dieNumber1 > 100) {
@@ -44,7 +45,7 @@ public class SnakeLadder {
 			default:turn=1; System.out.println("No play for player1");
 			
 			}
-			System.out.println("Updated position of player1 after rolling the dice "+count+" times="+current_position1);
+			System.out.println("Updated position of player1 after rolling the dice "+count1+" times="+current_position1);
 			if (current_position1 == 100) {
 				System.out.println("Player1 won");
 				System.exit(0);
@@ -53,7 +54,7 @@ public class SnakeLadder {
 			if(turn==1) {
 			int dieNumber2=(int)(Math.floor(Math.random()*10)%6)+1;
 			int option2=(int) (Math.floor(Math.random()*10)%3);
-
+			count2+=1;
 			switch(option2)//1 for ladder 2 for snake
 			{
 			case 1: if (current_position2 + dieNumber2 > 100) {
@@ -79,7 +80,7 @@ public class SnakeLadder {
 			default:turn=0; System.out.println("No play for player2");
 			
 			}
-			System.out.println("Updated position of player2 after rolling the dice "+count+" times="+current_position2);
+			System.out.println("Updated position of player2 after rolling the dice "+count2+" times="+current_position2);
 			if (current_position2 == 100) {
 				System.out.println("Player2 won");
 				System.exit(0);
